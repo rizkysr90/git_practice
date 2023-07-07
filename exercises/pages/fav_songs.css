@@ -1,0 +1,322 @@
+:root {
+  font-size: 62.5%;
+  /* font-family: "Open Sans"; */
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --bg-spotify: #1ed760;
+  --transition-speed: 600ms;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+.navbar {
+  position: fixed;
+  width: 10rem;
+  overflow: auto;
+  background-color: var(--bg-primary);
+  transition: width var(--transition-speed) ease;
+}
+.link-text {
+  font-size: 3rem;
+}
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.nav-item {
+  width: 100%;
+}
+.nav-link {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+.icon-link {
+  width: 100px;
+}
+.navbar:hover .nav-link {
+  justify-content: flex-start;
+}
+.nav-link svg,
+.nav-link i {
+  width: 5rem;
+  min-width: 5rem;
+  margin: 0 3rem;
+  /* color: #fff; */
+}
+.navbar:hover {
+  width: 30rem;
+}
+.nav-item:nth-child(3) .nav-link {
+  filter: none;
+  color: var(--bg-spotify);
+  /* background-color: red; */
+}
+.navbar:hover .link-text {
+  display: inline-block;
+}
+.nav-item:last-child {
+  margin-top: auto;
+}
+.nav-item:first-child .nav-link {
+  color: #fff;
+}
+.nav-item:first-child .nav-link:hover {
+  color: var(--bg-spotify);
+}
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  color: #1ed760;
+  background-color: var(--bg-secondary);
+}
+.navbar:hover > .navbar-nav > .nav-item:nth-child(3) {
+  background-color: var(--bg-secondary);
+}
+.nav-item:first-child {
+  background-color: var(--bg-spotify);
+}
+/* .nav-item:first-child .nav-link {
+      position: relative;
+  } */
+.nav-item:first-child .link-text {
+  transform: translateX(0);
+  margin-left: 3rem;
+  transition: all var(--transition-speed) ease;
+}
+.navbar:hover .nav-item:first-child .link-text {
+  animation: moveToRight var(--transition-speed) ease;
+  animation-fill-mode: backwards;
+}
+.navbar:hover .nav-item:first-child .logo {
+  transform: rotate(-180deg);
+}
+@keyframes moveToRight {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.nav-link:active {
+  transform: translateY(4px);
+}
+.link-text {
+  display: none;
+}
+.logo {
+  transform: rotate(0deg);
+  transition: all var(--transition-speed) ease;
+}
+.navbar:hover .logo {
+  transform: rotate(-180deg);
+}
+.link-text {
+  color: #fff;
+}
+.main {
+  background-color: var(--bg-secondary);
+  overflow-x: hidden;
+  max-width: 100%;
+  color: #fff;
+  padding-left: 12rem;
+  height: 100vh;
+  transition: all var(--transition-speed) ease;
+  overflow-x: hidden;
+}
+.main-container {
+  padding: 3rem;
+  width: 100%;
+  height: 100vh;
+  /* background-color: red; */
+}
+.banner {
+  display: flex;
+  padding: 1.2rem 1.5rem;
+  height: 25rem;
+  margin-bottom: 2rem;
+  /* background-color: var(--bg-secondary); */
+  background-image: linear-gradient(to right, #23232e, transparent);
+  /* background-color: var(--bg-primary); */
+}
+.banner-photo {
+  /* flex-basis: 10%; */
+  width: 20%;
+  /* background-color: red; */
+}
+.banner-heading {
+  flex-grow: 1;
+  padding-left: 5rem;
+  /* background-color: #1ed760; */
+}
+.banner-photo img {
+  /* max-width: 100%; */
+  height: 100%;
+}
+.banner-heading h1 {
+  font-weight: bold;
+  font-size: 5.5rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.banner-heading p {
+  margin: 0;
+  font-size: 2rem;
+}
+.banner-button {
+  margin-top: 2rem;
+  display: flex;
+}
+.btn-banner {
+  cursor: pointer;
+  border-radius: 100px;
+  padding: 1rem 3rem;
+}
+.banner-button div:first-child {
+  background-color: var(--bg-spotify);
+  color: var(--bg-secondary);
+}
+.banner-button div:nth-child(2) {
+  margin-left: 2rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.banner-button div:first-child:hover {
+  color: #fff;
+}
+.banner-button div:nth-child(2):hover {
+  border: 1px solid #fff;
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.section-btn {
+  cursor: pointer;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.section-btn:hover {
+  opacity: 1;
+}
+.section-header {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 1rem;
+  /* background-color: red; */
+}
+.card-content {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 40%;
+  height: 15rem;
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 1rem;
+}
+.card-text {
+  margin-left: 1rem;
+  overflow: hidden;
+  /* background-color: red; */
+  flex-basis: 70%;
+}
+.card-text p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.card-header {
+  font-weight: 700;
+}
+.card-description {
+  opacity: 0.7;
+}
+.card-description > span {
+  display: block;
+  margin-top: 0.5rem;
+}
+.card-img {
+  /* width: 40%; */
+  /* background-color: red; */
+  flex-basis: 30%;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* height: 1.2rem; */
+}
+/* If user hovering mouse on top of sidebar, it will trigger following rules */
+.navbar:hover + .main {
+  padding-left: 32rem;
+}
+/* Media screen */
+@media only screen and (min-width: 60rem) {
+  .navbar {
+    top: 0;
+    height: 100vh;
+    width: 10rem;
+  }
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (max-width: 60rem) {
+  .navbar {
+    bottom: 0;
+    min-width: 100vw;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-item:first-child {
+    display: none;
+  }
+  .navbar:hover .link-text {
+    display: none;
+  }
+  .nav-item {
+    flex: 1 0 15%;
+  }
+  .main {
+    padding-left: 0;
+  }
+}
